@@ -16,7 +16,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: your-mysql-container
+    container_name: db
     volumes:
       - ./db_data:/var/lib/mysql
     environment:
