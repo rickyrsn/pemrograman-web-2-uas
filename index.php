@@ -35,13 +35,17 @@
             $koneksi = mysqli_connect("db", "admin_user", "admin_password", "database_kuliah");
 
             // Periksa koneksi
-            if (mysqli_connect_errno()) {
-                echo "Koneksi database gagal: " . mysqli_connect_error();
-                exit();
+            if (!$koneksi) {
+                die("Koneksi database gagal: " . mysqli_connect_error());
             }
 
             // Query untuk mendapatkan data jadwal perkuliahan
             $result = mysqli_query($koneksi, "SELECT * FROM jadwal_perkuliahan");
+
+            // Periksa apakah query berhasil dijalankan
+            if (!$result) {
+                die("Query gagal: " . mysqli_error($koneksi));
+            }
 
             // Tampilkan data dalam tabel
             while ($row = mysqli_fetch_assoc($result)) {
