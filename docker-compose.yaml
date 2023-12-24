@@ -21,7 +21,7 @@ services:
       - ./db_data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: admin_password
-      MYSQL_DATABASE: database_kuliah
+      MYSQL_DATABASE: kuliah
       MYSQL_USER: admin_user
       MYSQL_PASSWORD: admin_password
     ports:
