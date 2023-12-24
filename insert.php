@@ -19,7 +19,9 @@ $query = "INSERT INTO jadwal_perkuliahan (mata_kuliah, hari, jam_mulai, jam_sele
 
 // Jalankan query
 if (mysqli_query($koneksi, $query)) {
-    echo "Data berhasil ditambahkan.";
+    // Redirect to admin.php after successful insert
+    header("Location: admin.php");
+    exit();
 } else {
     echo "Error: " . $query . "<br>" . mysqli_error($koneksi);
 }
