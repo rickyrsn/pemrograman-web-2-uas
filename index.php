@@ -32,7 +32,7 @@
         </tr>
         <?php
             // Koneksi ke database (gantilah sesuai dengan konfigurasi server Anda)
-            $koneksi = mysqli_connect("db", "admin_user", "admin_password", "database_kuliah");
+            $koneksi = mysqli_connect("db", "admin_user", "admin_password", "kuliah");
 
             // Periksa koneksi
             if (!$koneksi) {
